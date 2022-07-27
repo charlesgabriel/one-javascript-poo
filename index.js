@@ -1,17 +1,12 @@
 import { Cliente } from "./Cliente.js";
 import { ContaCorrente } from "./ContaCorrent.js";
 
-const cliente1 = new Cliente();
-cliente1.nome = "Charles";
-cliente1.cpf = 11122233345;
+const cliente1 = new Cliente("Charles", 11122233345);
+const cliente2 = new Cliente("Ricardo", 88822233345);
 
-const cliente2 = new Cliente();
-cliente2.nome = "Ricardo";
-cliente2.cpf = 88822233345;
+const contaCorrenteCharles = new ContaCorrente(cliente1, 1001);
+const contaCorrenteRicardo = new ContaCorrente(cliente2, 102);
 
-const contaCorrenteCharles = new ContaCorrente();
-contaCorrenteCharles.agencia = 1001;
-contaCorrenteCharles.cliente = cliente1;
 contaCorrenteCharles.depositar(500);
 
 // const valorSacado = contaCorrenteCharles.sacar(50);
@@ -19,11 +14,7 @@ contaCorrenteCharles.depositar(500);
 
 console.log(contaCorrenteCharles);
 
-const conta2 = new ContaCorrente();
-conta2.cliente = cliente2;
-conta2.agencia = 102;
-
 let valor = 200;
-contaCorrenteCharles.transferir(valor, conta2);
+contaCorrenteCharles.transferir(valor, contaCorrenteRicardo);
 
-console.log(conta2);
+console.log(contaCorrenteRicardo);
