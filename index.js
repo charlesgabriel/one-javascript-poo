@@ -18,3 +18,4 @@ let valor = 200;
 contaCorrenteCharles.transferir(valor, contaCorrenteRicardo);
 
 console.log(contaCorrenteRicardo);
+console.log(ContaCorrente.numeroDeContas);
